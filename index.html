@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SunGrid Solar – Rooftop and commercial solar installation</title>
+<meta name="description" content="Solar panel design, installation and maintenance for homes, businesses and farms.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0c1a3a;--panel:#1f3f9c;--sun:#ffb21e;--sky:#e6f6fb;--white:#fff;--mute:#4a5878;
+--head:'Bricolage Grotesque',system-ui,sans-serif;--body:'Source Sans 3',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font:18px/1.6 var(--body);color:var(--ink);background:var(--white)}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+h1,h2,h3{font-family:var(--head);line-height:1.08;letter-spacing:-.02em}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+header{position:fixed;inset:0 0 auto;z-index:10;background:rgba(255,255,255,.88);backdrop-filter:blur(8px);border-bottom:1px solid #0c1a3a14}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+.logo{font:800 1.3rem var(--head);text-decoration:none;display:flex;gap:8px;align-items:center}
+.logo i{width:18px;height:18px;border-radius:50%;background:var(--sun);animation:spin 12s linear infinite;box-shadow:0 0 0 4px #ffb21e44}
+nav{display:flex;gap:24px;font-weight:600;font-size:.95rem}
+nav a{text-decoration:none}nav a:hover{color:var(--panel)}
+.btn{display:inline-block;background:var(--sun);color:var(--ink);font:700 1rem var(--head);padding:14px 26px;border-radius:999px;text-decoration:none;border:0;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px #ffb21e66}
+/* hero */
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--sky),#fff 90%);padding:140px 0 90px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;position:relative;z-index:1}
+.hero h1{font-size:clamp(2.4rem,5.6vw,4.4rem);font-weight:800}
+.hero p{margin:22px 0 32px;color:var(--mute);max-width:46ch;font-size:1.15rem}
+.sun{position:absolute;right:-80px;top:300px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,#ffd35c 0 45%,#ffb21e 46%,#ffb21e00 72%);animation:rise 2.4s cubic-bezier(.2,.8,.2,1) forwards,pulse 5s 2.4s ease-in-out infinite}
+.sun::after{content:"";position:absolute;inset:-60px;border-radius:50%;background:conic-gradient(from 0deg,#ffb21e22,transparent 10%,#ffb21e22 20%,transparent 30%,#ffb21e22 40%,transparent 50%,#ffb21e22 60%,transparent 70%,#ffb21e22 80%,transparent 90%);animation:spin 40s linear infinite;mask:radial-gradient(circle,transparent 50%,#000 51%)}
+.hero figure{border-radius:18px;overflow:hidden;box-shadow:0 30px 60px #0c1a3a33;transform:rotate(1.5deg);animation:float 7s ease-in-out infinite;background:#fff}
+.hero figure img{width:100%}
+.in{opacity:0;transform:translateY(24px);animation:in .8s forwards}
+.d1{animation-delay:.2s}.d2{animation-delay:.45s}.d3{animation-delay:.7s}.d4{animation-delay:.95s}
+@keyframes in{to{opacity:1;transform:none}}
+@keyframes rise{from{transform:translateY(260px);opacity:0}to{transform:none;opacity:.9}}
+@keyframes pulse{50%{transform:scale(1.06)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes float{50%{transform:rotate(1.5deg) translateY(-12px)}}
+/* stats */
+.stats{background:var(--ink);color:#fff;padding:48px 0}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+.stats b{display:block;font:800 2.8rem var(--head);color:var(--sun)}
+.stats span{color:#c4cde4;font-size:.95rem}
+section{padding:90px 0}
+h2{font-size:clamp(1.9rem,4vw,2.9rem);font-weight:800;margin-bottom:14px}
+.lead{color:var(--mute);max-width:58ch;margin-bottom:48px}
+/* services */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.card{border-radius:16px;overflow:hidden;background:var(--sky);display:flex;flex-direction:column}
+.card .ph{height:210px;background:#fff;overflow:hidden;display:flex;justify-content:center}
+.card img{height:100%;width:100%;object-fit:cover;transition:transform .8s}
+.card:hover img{transform:scale(1.08)}
+.card.sm img{width:auto;object-fit:contain}
+.card div.t{padding:26px}
+.card h3{font-size:1.4rem;margin-bottom:8px}
+.card p{color:var(--mute);font-size:1rem}
+/* split / team */
+.split{background:var(--sky)}
+.split .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.split img{border-radius:18px;box-shadow:0 24px 50px #0c1a3a30;width:100%}
+.steps{list-style:none;padding:0;margin-top:26px;counter-reset:s}
+.steps li{counter-increment:s;padding:0 0 22px 58px;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:40px;height:40px;border-radius:50%;background:var(--sun);font:800 1.1rem/40px var(--head);text-align:center}
+.steps li::after{content:"";position:absolute;left:19px;top:44px;bottom:4px;width:2px;background:#0c1a3a22;transform-origin:top;transform:scaleY(0);transition:transform .8s .3s}
+.steps li:last-child::after{display:none}
+.show .steps li::after{transform:scaleY(1)}
+.steps b{font-family:var(--head)}
+/* calculator */
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.box{background:var(--ink);color:#fff;border-radius:20px;padding:36px}
+.box label{display:block;font-weight:600;margin-bottom:10px}
+.box input[type=range]{width:100%;accent-color:var(--sun)}
+.out{margin-top:26px;display:grid;gap:14px}
+.out div{display:flex;justify-content:space-between;border-top:1px solid #ffffff22;padding-top:12px}
+.out b{font:800 1.5rem var(--head);color:var(--sun)}
+.note{font-size:.85rem;color:var(--mute);margin-top:14px}
+/* contact */
+.contact{background:var(--panel);color:#fff}
+.contact .lead{color:#d6def5}
+form{display:grid;gap:14px;max-width:560px}
+input,textarea{font:inherit;padding:14px 16px;border-radius:10px;border:0;width:100%}
+footer{background:var(--ink);color:#aab4d0;padding:30px 0;font-size:.9rem}
+/* scroll reveal */
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}
+.show.rv,.show .rv{opacity:1;transform:none}
+.cards .rv:nth-child(2){transition-delay:.15s}.cards .rv:nth-child(3){transition-delay:.3s}
+@media(max-width:860px){nav a:not(.btn){display:none}.hero .wrap,.split .wrap,.calc,.cards{grid-template-columns:1fr}.stats .wrap{grid-template-columns:1fr 1fr}.sun{width:300px;height:300px;top:520px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.in,.rv{opacity:1;transform:none}.sun{opacity:.9}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="logo" href="#top"><i></i>SunGrid Solar</a>
+  <nav><a href="#services">Services</a><a href="#process">How it works</a><a href="#savings">Savings</a><a class="btn" href="#contact" style="padding:9px 20px">Get a quote</a></nav>
+</div></header>
+
+<main id="top">
+<div class="hero">
+  <div class="sun" aria-hidden="true"></div>
+  <div class="wrap">
+    <div>
+      <h1 class="in d1">Turn your roof into your power plant.</h1>
+      <p class="in d2">We design, install and maintain solar systems for homes, factories and farms. Lower your electricity bill from the first month.</p>
+      <a class="btn in d3" href="#contact">Get a free site survey</a>
+    </div>
+    <figure class="in d4"><img src="images/panels-array.jpg" alt="Six solar panels mounted on a metal frame" width="713" height="429"></figure>
+  </div>
+</div>
+
+<div class="stats"><div class="wrap">
+  <div><b data-n="850" data-s="+">0</b><span>Systems installed</span></div>
+  <div><b data-n="25" data-s=" yrs">0</b><span>Panel performance warranty</span></div>
+  <div><b data-n="70" data-s="%">0</b><span>Typical bill reduction</span></div>
+  <div><b data-n="12" data-s=" MW">0</b><span>Clean power generated</span></div>
+</div></div>
+
+<section id="services"><div class="wrap">
+  <h2 class="rv">Solar for every kind of roof and field</h2>
+  <p class="lead rv">Pick the setup that fits your space and your bill. We handle the paperwork, the install and the after-care.</p>
+  <div class="cards">
+    <article class="card sm rv"><div class="ph"><img src="images/rooftop.jpg" alt="Solar panels on a flat residential rooftop" width="225" height="225"></div><div class="t"><h3>Home rooftops</h3><p>Raised mounts on flat terraces, sized to your monthly units. Neat, secure and easy to clean.</p></div></article>
+    <article class="card rv"><div class="ph"><img src="images/install-team.jpg" alt="Technicians lifting a solar panel into place" width="713" height="429"></div><div class="t"><h3>Commercial and ground-mount</h3><p>Large arrays for factories, warehouses, schools and farms, installed by our own trained crews.</p></div></article>
+    <article class="card rv"><div class="ph"><img src="images/panel-closeup.jpg" alt="Front and back of a monocrystalline solar panel" width="447" height="447"></div><div class="t"><h3>High-efficiency panels</h3><p>Monocrystalline panels with a long warranty, matched with the right inverter for your site.</p></div></article>
+  </div>
+</div></section>
+
+<section class="split" id="process"><div class="wrap">
+  <img class="rv" src="images/install-team.jpg" alt="Three installers fitting solar panels on a field array" width="713" height="429">
+  <div class="rv">
+    <h2>From survey to switch-on in four steps</h2>
+    <ol class="steps">
+      <li><b>Site survey.</b> We check your roof, shade and current electricity use.</li>
+      <li><b>Custom design.</b> You get a clear plan with system size, cost and expected savings.</li>
+      <li><b>Installation.</b> Our crew fits the panels, inverter and wiring, usually within days.</li>
+      <li><b>Switch-on and support.</b> We connect you to the grid and keep monitoring performance.</li>
+    </ol>
+  </div>
+</div></section>
+
+<section id="savings"><div class="wrap calc">
+  <div class="rv">
+    <h2>See what you could save</h2>
+    <p class="lead" style="margin-bottom:0">Move the slider to your average monthly electricity bill. This is a rough estimate. Your survey gives exact figures.</p>
+  </div>
+  <div class="box rv">
+    <label for="bill">Monthly bill: <span id="billv">₹5,000</span></label>
+    <input id="bill" type="range" min="1000" max="100000" step="500" value="5000">
+    <div class="out">
+      <div><span>Estimated yearly savings</span><b id="ys">₹0</b></div>
+      <div><span>Suggested system size</span><b id="kw">0 kW</b></div>
+      <div><span>CO₂ avoided per year</span><b id="co">0 t</b></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap">
+  <h2 class="rv">Get your free quote</h2>
+  <p class="lead rv">Tell us where you are and what you pay now. We reply within one working day.</p>
+  <form class="rv" action="mailto:hello@example.com" method="post" enctype="text/plain">
+    <input name="name" placeholder="Your name" aria-label="Your name" required>
+    <input name="phone" type="tel" placeholder="Phone number" aria-label="Phone number" required>
+    <textarea name="message" rows="4" placeholder="Location and average monthly bill" aria-label="Message"></textarea>
+    <button class="btn" type="submit">Send request</button>
+  </form>
+</div></section>
+</main>
+<footer><div class="wrap">© 2026 SunGrid Solar. Replace with your company address, phone and email.</div></footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.2});
+document.querySelectorAll('.rv,.split .wrap').forEach(el=>io.observe(el));
+// count-up stats
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;so.unobserve(e.target);
+ e.target.querySelectorAll('b').forEach(b=>{const n=+b.dataset.n,s=b.dataset.s,t0=performance.now();
+ (function f(t){const p=Math.min((t-t0)/1600,1);b.textContent=Math.round(n*(1-Math.pow(1-p,3)))+s;if(p<1)requestAnimationFrame(f)})(t0)})}),{threshold:.5});
+so.observe(document.querySelector('.stats'));
+// savings estimate (assumes about 70% bill offset, ~₹7/unit, ~1,400 units per kW per year)
+const bill=document.getElementById('bill'),fmt=n=>'₹'+Math.round(n).toLocaleString('en-IN');
+function calc(){const b=+bill.value,save=b*12*.7,units=b/7*12*.7;
+ billv.textContent=fmt(b);ys.textContent=fmt(save);kw.textContent=(units/1400).toFixed(1)+' kW';co.textContent=(units*.00082).toFixed(1)+' t'}
+bill.addEventListener('input',calc);calc();
+</script>
+</body>
+</html>
